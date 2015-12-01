@@ -1,0 +1,28 @@
+{
+  "name": "googlr",
+  "version": "1.0.0",
+  "description": "Perform Google searches on the command line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sean9999/googlr.git"
+  },
+  "keywords": [
+    "google",
+    "cli"
+  ],
+  "author": "Sean Macdonald <sean@crazyhorsecoding.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sean9999/googlr/issues"
+  },
+  "homepage": "https://github.com/sean9999/googlr#readme",
+  "dependencies": {
+    "bash-color": "0.0.3",
+    "continuation-local-storage": "^3.1.4",
+    "request-promise": "^1.0.1"
+  }
+}
