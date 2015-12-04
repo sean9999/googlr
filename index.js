@@ -1,10 +1,12 @@
+#!/usr/bin/env node
 "use strict";
 
 var rp = require('request-promise');
 var color = require('bash-color');
+var args = process.argv.slice(2);
 
 var options = {
-	"uri": "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=splendid",
+	"uri": "http:\/\/ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + args.join("+"),
 	"headers": {
 		"User-Agent": "googlr"
 	},
@@ -12,7 +14,6 @@ var options = {
 };
 
 rp(options).then(function(payload){
-
 	var results = payload.responseData.results.map(function(row){
 		return {
 			"title": color.blue(row.titleNoFormatting),
@@ -22,11 +23,9 @@ rp(options).then(function(payload){
 			})
 		};
 	});
-
 	results.forEach(function(result,i){
 		console.log( "\n" + result.title + "\n[" + i + "] " + result.url + "\n" + result.content + "\n" );
 	});
-
 }).catch(function(err){
 	console.error(err);
 });
