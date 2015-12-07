@@ -20,11 +20,12 @@ rp(options).then(function(payload){
 			"url": color.cyan(row.visibleUrl),
 			"content": row.content.replace(/<b>([^<]+)<\/b>/g, function(fullmatch,submatch1){
 				return color.green(submatch1);
-			})
+			}),
+            "row": row
 		};
 	});
 	results.forEach(function(result,i){
-		console.log( "\n" + result.title + "\n[" + i + "] " + result.url + "\n" + result.content + "\n" );
+		console.log( "\n" + result.title + "\n[" + i + "] " + result.url + "\n" + result.content + "\n", result );
 	});
 }).catch(function(err){
 	console.error(err);
