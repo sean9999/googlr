@@ -1,6 +1,6 @@
 {
-  "name": "googlr",
-  "version": "1.0.0",
+  "name": "@sean9999/googlr",
+  "version": "1.0.1",
   "description": "Perform Google searches on the command line",
   "main": "index.js",
   "scripts": {
